@@ -23,10 +23,10 @@ import requests
 import logging
 from datetime import datetime
 
-class SimpleDDos(object):
+class SimpleDos(object):
 
-    def simpleDdos(self):
+    def simpledos(self):
         pass
 
-    def simpleDos(self):
+    def simpleDosOne(self):
         pass
