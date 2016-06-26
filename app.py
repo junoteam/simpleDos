@@ -23,14 +23,6 @@ import requests
 import logging
 from datetime import datetime
 
-class SimpleDDos(object):
-
-    def simpleDdos(self):
-        pass
-
-    def simpleDos(self):
-        pass
-
 if __name__ == '__main__':
 
     pass
