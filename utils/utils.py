@@ -10,9 +10,8 @@ class Utils(object):
     def cleanUrl(url):
 
         cleanedUrl = str(url)
-        print "Cleaning URL: %s" % url
-        return url
-
+        result = re.findall("'(.+?)'", cleanedUrl)
+        print result[0]
 
     @staticmethod
     def utilsSecond(self):
