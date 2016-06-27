@@ -22,5 +22,6 @@ if __name__ == '__main__':
     utilsObj = Utils()
 
     myArg = mainObj.programArgs()
-    utilsObj.cleanUrl(myArg)
+    urlRes = utilsObj.cleanUrl(myArg)
+    print urlRes
 

@@ -11,8 +11,8 @@ class Utils(object):
 
         cleanedUrl = str(url)
         result = re.findall("'(.+?)'", cleanedUrl)
-        print result[0]
+        return result[0]
 
     @staticmethod
-    def utilsSecond(self):
+    def utilsSecond():
         pass
