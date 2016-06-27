@@ -2,34 +2,25 @@
 # -*- coding: utf-8 -*-
 # -*- by Alex -*-
 
-# This program is free software; you can redistribute it and/or
-# modify it under the terms of the GNU General Public License
-# as published by the Free Software Foundation; either version 2
-# of the License, or (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program; if not, write to the Free Software
+import argparse
+from utils.utils import Utils
 
-import socket
-import sys
-import os
-import time
-import requests
-import logging
-import thread
-import urllib2
-import re
+class AppMain(object):
 
-from time import sleep
-from datetime import datetime
-from dos import dos
-from utils import utils
+    __version__ = '0.1-rc-1.0'
+
+    def programArgs(self):
+
+        parser = argparse.ArgumentParser(description="SimpleDos - is is simple DDos script", epilog="SimpleDos version: %s " % self.__version__)
+        parser.add_argument('-u', '--url', help='Provide valid URL', required=True)
+        args = parser.parse_args()
+        return args
 
 if __name__ == '__main__':
 
-    pass
+    mainObj = AppMain()
+    utilsObj = Utils()
+
+    myArg = mainObj.programArgs()
+    utilsObj.cleanUrl(myArg)
+
