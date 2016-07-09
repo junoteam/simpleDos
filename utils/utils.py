@@ -4,7 +4,7 @@
 
 import re
 import sys
-import requests
+import urllib2
 
 class Utils(object):
 
@@ -26,13 +26,16 @@ class Utils(object):
 
     @staticmethod
     def checkIfUrlAlive(cleanURL):
-        request = requests.get(cleanURL)
-        responseCode = str(request.status_code)
-        if responseCode == "200":
-            print('Web site exists')
-            print('Web site response code: %s' % responseCode)
-        else:
+        try:
+            response = urllib2.urlopen(cleanURL)
+            statusCode = response.getcode()
+            if str(statusCode) == '200':
+                print('Web site exists')
+                print('Web site response code: %s' % statusCode)
+
+        except urllib2.HTTPError, e:
             print('Web site does not exist')
-            print('Web site response code: %s' % responseCode)
-            print responseCode
-            sys.exit(1)
+            print(e.code)
+        except urllib2.URLError, e:
+            print('Web site does not exist')
+            print(e.args)
