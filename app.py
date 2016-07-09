@@ -23,5 +23,5 @@ if __name__ == '__main__':
 
     myArg = mainObj.programArgs()
     urlRes = utilsObj.cleanUrl(myArg)
-    print urlRes
+    urlAlive = utilsObj.checkIfUrlAlive(urlRes)
 
