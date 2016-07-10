@@ -40,6 +40,7 @@ class Utils(object):
             if str(statusCode) == '200':
                 print('Web site exists')
                 print('Web site response code: %s' % statusCode)
+                return cleanURL
 
         except urllib2.HTTPError, e:
             print('Web site does not exist')
