@@ -14,12 +14,13 @@ class Utils(object):
         cleanedUrl = str(url)
         result = re.findall("'(.+?)'", cleanedUrl)
         cleanURL = result[0]
-        print "URL to DDos: %s " % cleanURL
 
         if 'http' not in cleanURL:
             url = "http://" + cleanURL
             print "URL to DDos: %s " % url
             return url
+        else:
+            print "URL to DDos: %s " % cleanURL
 
         return cleanURL
 
